@@ -1,0 +1,46 @@
+{
+  "name": "frontend",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": "./",
+  "proxy": "http://52.207.239.236:8080/",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "gsap": "^3.10.4",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "react-router-dom": "^6.3.0",
+    "react-scripts": "5.0.1",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "copy:build": "copyfiles -u 1 ./build/** ../backend/public",
+    "copy:staticCss": "copyfiles -u 1 ./build/static/css/** ../backend/public",
+    "copy:staticJs": "copyfiles -u 1 ./build/static/js/** ../backend/public",
+    "build": "react-scripts build && npm-run-all copy:build copy:staticCss copy:staticJs",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "copyfiles": "^2.4.1",
+    "npm-run-all": "^4.1.5"
+  }
+}
