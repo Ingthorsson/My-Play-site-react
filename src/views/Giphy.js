@@ -9,7 +9,7 @@ function useGiphy(query) {
     async function fetchData() {
       try {
         setLoading(true);
-        const response = await fetch(`/gifs?query=${query}`);
+        const response = await fetch(`http://34.201.134.10:8080/gifs?query=${query}`);
         const json = await response.json();
 
         setResults(
